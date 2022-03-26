@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<title>Mongoose Flight</title>
+</head>
+
+<body>
+	<h1>Flights</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>airline</th>
+				<th>airport </th>
+				<th>flightNo</th>
+				<th>Depart</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Write the line of EJS to iterate over movies using forEach -->
+			<% flights.forEach(function(m) { %>
+				<tr>
+					<td>
+						<%= m.airline %>
+					</td>
+					<td>
+						<%= m.airport %>
+					</td>
+					<td>
+						<%= m.flightNum %>
+					</td>
+					<td>
+						<%= m.departs.toLocaleDateString() %>
+					</td>
+					<td><a href="/flights/<%= m._id%>">detail</a></td>
+				</tr>
+				<% }) %>
+		</tbody>
+	</table>
+	<br>
+
+</body>
+
+</html>
